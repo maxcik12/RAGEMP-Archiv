@@ -1,0 +1,38 @@
+/* Button */
+
+.btn {
+	background-color: #34495e;
+	width: 200px;
+	height: 35px;
+	display: inline-block;
+	border-bottom: solid 2px #2c3e50;
+	text-align: center;
+	line-height: 30px;
+	font-weight: bold;
+	color: white;
+}
+
+.btn span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.btn span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.btn:hover span {
+	padding-right: 25px;
+}
+
+.btn:hover span:after {
+	opacity: 1;
+	right: 0;
+}

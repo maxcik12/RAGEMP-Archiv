@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<style>
+			.box {
+				width: 400px;
+				height: 300px;
+				padding: 20px;
+				margin: 100px auto;
+				box-shadow: 0px 0px 10px 2px grey;
+				
+				background-image: url(background.jpg);
+				background-size: cover;
+			};
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			<center>
+				<font face = "Arial" color = "white">
+					<b>Herzlich willkommen auf SERVERNAME. Bitte fülle die Felder aus, um dir einen Account bei uns anzulegen, oder dich in einen bereits vorhanden einzuloggen. Dein Name muss mindestens drei und dein Passwort mindestens fünf Zeichen lang sein.</br></br>
+					Username:<br>
+					<input type = "text" name = "loginName" id = "loginName"><br><br>
+					Passwort:<br>
+					</b>
+					<input type = "password" name = "loginPass" id = "loginPass"><br><br>
+					<button class="btn" onclick = "sendAccountInfos(1)"><span>Einloggen</span></button><br><br>
+					<button class="btn" onclick = "sendAccountInfos(0)"><span>Registrieren</span></button>
+				</font>
+			</center>
+		</div>
+	</body>
+	
+	<script>
+		function sendAccountInfos(type) {
+			let loginName = document.getElementById("loginName").value;
+			let loginPass = document.getElementById("loginPass").value;
+			mp.trigger("registerLogin.client",loginName,loginPass,type);
+		};
+	</script>
+</html>
